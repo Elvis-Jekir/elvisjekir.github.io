@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elvis Jekir</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(to bottom right, #e6ecf3, #d7e0ea);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #0073e6;
+    }
+    .section-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .avatar {
+      width: 360px;
+      height: 480px;
+      border-radius: 50% / 40%;
+      object-fit: cover;
+      object-position: top;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .about-text, .content-text {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 700px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .button {
+      margin-top: 1.5rem;
+      padding: 0.6rem 1.4rem;
+      background-color: #fff;
+      border: 2px solid #0073e6;
+      color: #0073e6;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.2s;
+      display: inline-block;
+    }
+    .button:hover {
+      background-color: #0073e6;
+      color: #fff;
+    }
+    section {
+      scroll-margin-top: 80px;
+      text-align: center;
+    }
+    .hidden-section {
+      display: none;
+    }
+  </style>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section-container.dynamic').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'flex';
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      showSection("about");
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div><strong>&lt;Elvis /&gt;</strong></div>
+    <nav>
+      <a onclick="showSection('projects')">Projects</a>
+      <a href="Elvis_Resume_2025-2.pdf" target="_blank">Resume</a>
+      <a onclick="showSection('about')">About</a>
+      <a onclick="showSection('skills')">Skills</a>
+    </nav>
+  </header>
+
+  <section class="section-container dynamic about-section" id="about">
+    <img src="elvis_avatar_with_analyst_graphics.png" alt="Elvis Avatar" class="avatar" />
+    <div class="about-text">
+      <h1>About Me</h1>
+      <p>Hello! I'm Elvis — a Brazilian guy living in Vancouver and currently diving into the world of Data Science. With a solid background in Business Administration and Finance, I’ve led sales teams, managed operations, and handled financial analysis including cash flow and reporting. These experiences strengthened my communication, planning, and decision-making — all of which now support my journey as a data analyst.</p>
+      <p>I enjoy organizing data and exploring patterns that help solve real-world problems. I'm focused on tools like Python, SQL, Excel, and Tableau to better understand behavior, performance, and business trends. Whether it's in finance, sales, or customer insights, I believe clear and actionable data can guide meaningful results.</p>
+      <a class="button" href="Elvis_Resume_2025-2.pdf" target="_blank">Resume</a>
+    </div>
+  </section>
+
+  <section class="section-container dynamic hidden-section about-section" id="projects">
+    <img src="elvis_avatar_with_analyst_graphics.png" alt="Elvis Avatar" class="avatar" />
+    <div class="content-text">
+      <h1>Projects</h1>
+      <p>Explore my work on GitHub:</p>
+      <p>
+        <a href="https://github.com/Elvis-Jekir/mental-health-project" target="_blank">Mental Health Data Project</a> |
+        <a href="https://github.com/Elvis-Jekir/netflix_project" target="_blank">Netflix Movies Analysis</a> |
+        <a href="https://github.com/Elvis-Jekir/movie_review" target="_blank">Movie Review Insights</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section-container dynamic hidden-section about-section" id="skills">
+    <img src="elvis_avatar_with_analyst_graphics.png" alt="Elvis Avatar" class="avatar" />
+    <div class="content-text">
+      <h1>Skills</h1>
+      <p>Python • SQL • Pandas • Tableau • Excel • Jupyter • GitHub • Data Cleaning • Data Visualization • Business Reporting • Communication • Organization • Financial Analysis</p>
+    </div>
+  </section>
+</body>
+</html>
